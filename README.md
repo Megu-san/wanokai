@@ -28,7 +28,7 @@
 
 - belongs_to :user
 
-## repots テーブル
+## reports テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
