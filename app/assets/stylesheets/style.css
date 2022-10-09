@@ -51,8 +51,22 @@ a {
   display: flex;
   justify-content: space-between;
 }
+.nav__left {
+  display: flex;
+  align-items: center;
+}
 .logo {
-  width: 200px;
+  width: 100px;
+  height: 100px;
+}
+.circle-name {
+  color: darkslateblue;
+  margin-left: 30px;
+  font-size: 40px;
+}
+.cyusyaku {
+  margin-top: 10px;
+  font-size: 12px;
 }
 .nav__btn{
   display: inline-block;
