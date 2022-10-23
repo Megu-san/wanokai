@@ -1,2 +1,41 @@
-<h1>Studies#new</h1>
-<p>Find me in app/views/studies/new.html.erb</p>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">年間活動スケジュール登録</h2>
+
+        <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
+        <%# 「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
+        <%= form_with model: @study, url: studies_path, local: true do |f| %>
+
+        <div class="field">
+          <%= f.label :date, "活動日付" %><br />
+          <%= f.date_select :date, use_month_numbers: true, start_year: 2022, end_year: (Time.now.year + 10), default: Date.new(2022, 11, 1), id:"date" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :activity, "活動有無" %><br />
+          <%= f.select :activity, [["◯", "◯"], ["お休み", "お休み"]], id:"activity", autofocus: true, autocomplete: "activity" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :study, "勉強会有無" %><br />
+          <%= f.select :study, [["", ""], ["◯", "◯"]], id:"study", autocomplete: "study" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :manager, "勉強会担当者" %><br />
+          <%= f.text_field :manager, id:"umanager", autocomplete: "manager" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :text, "勉強会テキストページ" %><br />
+          <%= f.text_field :text, id:"text" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "登録", class: :form__btn  %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>

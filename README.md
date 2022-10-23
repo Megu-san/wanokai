@@ -11,10 +11,20 @@
 
 ### Association
 
-- has_many :attendances
+- has_many :activities
 - has_many :reports
 
-## attendances テーブル
+## studies テーブル
+
+| Column       | Type       | Options     |
+| ------------ | ---------- | ----------- |
+| date         | date       | null: false |
+| activity     | string     | null: false |
+| study        | string     |             |
+| manager      | string     |             |
+| text         | string     |             |
+
+## activities テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
@@ -36,7 +46,7 @@
 | student      | integer    | null: false                    |
 | volunteer    | integer    | null: false                    |
 | visitor      | integer    | null: false                    |
-| repo_comment | text       | null: false                    |
+| repo_comment | text       |                                |
 | user         | references | null: false, foreign_key: true |
 
 ### Association
